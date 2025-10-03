@@ -1,7 +1,6 @@
-from typing import Any, Dict
-
-from api.api import api_router
 from fastapi import FastAPI
+
+from app.api.api import api_router
 
 app = FastAPI(
     title="Remote Flash API",
@@ -11,13 +10,3 @@ app = FastAPI(
 
 
 app.include_router(api_router, prefix="/api", tags=["API"])
-
-
-def main():
-    import uvicorn
-
-    uvicorn.run("main:app", port=8000, reload=True)
-
-
-if __name__ == "__main__":
-    main()

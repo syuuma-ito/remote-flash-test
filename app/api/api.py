@@ -4,7 +4,8 @@ import tempfile
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from fastapi.responses import StreamingResponse
-from libs.flash_stm32 import flash_stm32_f4xx
+
+from app.libs.flash_stm32 import flash_stm32_f4xx
 
 api_router = APIRouter()
 

@@ -42,11 +42,12 @@ def flash_stm32_f4xx(
 
     openocd_commands = [
         "init",
-        "reset halt",
+        "reset",
+        "halt",
         f"flash write_image erase {normalized_path}",
         f"verify_image {normalized_path}",
-        "reset run",
-        "shutdown",
+        "reset",
+        "exit",
     ]
 
     command_string = "; ".join(openocd_commands)
